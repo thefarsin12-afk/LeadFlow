@@ -31,15 +31,30 @@ POST http://127.0.0.1:8000/account/token/refresh/
 Content-Type: application/json
 
 {
-    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5Mzc2Mjg1MCwiaWF0IjoxNzkzNjc2NDUwLCJqdGkiOiJiYTQ1ZGU4NjIwMjk0ZjdkOTQ4NTkzN2NmZjIzNDgxOSIsInVzZXJfaWQiOiIxIn0.EcwUT2HkHtiJKIVADk-TJbpWbarn7L5EMaXr58SJbI8"
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5Mzc4NTM4NCwiaWF0IjoxNzkzNjk4OTg0LCJqdGkiOiJiMTI0OWViYTIzNjU0MmYyOWY5ZTVkMjM3Y2M0ZWY4NyIsInVzZXJfaWQiOiIxIn0.KrWS9R7ttyzboXv34UB7S0U2igFMCy0pahyiJDITnro"
 }
 
 # logged user 
 ###
 GET http://127.0.0.1:8000/account/profile/
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc2NzY5LCJpYXQiOjE3OTM2NzY0NjksImp0aSI6ImEwMGFjZGFlMjlkZDRmYzFhNWY2NmZlZmI3ODQ5NWRkIiwidXNlcl9pZCI6IjEifQ.Bjy6QdtyTqTMNMnj2dOkvqCc6j592WyDJXUwnjH8rlk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjk3MTM4LCJpYXQiOjE3OTM2OTY4MzgsImp0aSI6ImE0NDBjZTQwY2ViMzQ2YzM5MDEyYzdiNWZjYWRjMTdiIiwidXNlcl9pZCI6IjEifQ.jI3NhqzUugHZhNCVDTa28sfEmTL-Tx_2XsmQ6JiyLYg
 
+# profile api
+###
+PUT http://127.0.0.1:8000/account/profile/completed/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjk5Mjk3LCJpYXQiOjE3OTM2OTg5OTcsImp0aSI6ImE5MDIwZjgyODNmNDRlNGE5MDEwZmZkYjk5YmE3OTY2IiwidXNlcl9pZCI6IjEifQ.wecMIoYk5hZ6FO_9a0D4RaWJgtVg77WjOZSq-fu8_fI
+
+{
+    "skill":"python,django,drf,html,css,mysql",
+
+    "qualification" : "BA",
+
+    "linkedin_url":"https://www.linkedin.com/in/williamhgates/",
+
+    "github_url":"https://www.linkedin.com/in/williamhgates/"
+}
 
 # ==== LEADS ====
 
@@ -47,22 +62,22 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 ###
 GET http://127.0.0.1:8000/api/leads/
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc1MTA0LCJpYXQiOjE3OTM2NzQ4MDQsImp0aSI6ImFhMmJjNzhhZTM1ODRhY2ZiNWRlY2U0NzI3M2Q3ZTk0IiwidXNlcl9pZCI6IjEifQ.k3X-GEqn_dlfQObFbR8p6-qMBqiTq_gmsIn6C-DOIF0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjk4NDE5LCJpYXQiOjE3OTM2OTgxMTksImp0aSI6IjQ3NDYwMjRkM2MwMDRkZGJiZDRjNDQ4M2Q3ODk2NDFlIiwidXNlcl9pZCI6IjEifQ.u3QHxmy4i7I49SgImTnwFXTNvEa-0c3RF2wBBrmrNSY
 
 # api for creating
 ###
 POST http://127.0.0.1:8000/api/leads/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc1MTA0LCJpYXQiOjE3OTM2NzQ4MDQsImp0aSI6ImFhMmJjNzhhZTM1ODRhY2ZiNWRlY2U0NzI3M2Q3ZTk0IiwidXNlcl9pZCI6IjEifQ.k3X-GEqn_dlfQObFbR8p6-qMBqiTq_gmsIn6C-DOIF0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjk4NDE5LCJpYXQiOjE3OTM2OTgxMTksImp0aSI6IjQ3NDYwMjRkM2MwMDRkZGJiZDRjNDQ4M2Q3ODk2NDFlIiwidXNlcl9pZCI6IjEifQ.u3QHxmy4i7I49SgImTnwFXTNvEa-0c3RF2wBBrmrNSY
 
 {
-    "name": "Sunil Shetty",
-    "email": "sunil@gmail.com",
-    "phone": "9876543218",
-    "company": "Info Tech",
+    "name": "farsii",
+    "email": "thefarsi@gmail.com",
+    "phone": "8714064426",
+    "company": "FAFA",
     "source": "Website",
-    "status": "Interested",
-    "description": "Interested in our services"
+    "status": "New",
+    "description": "On Going"
 
 }
 

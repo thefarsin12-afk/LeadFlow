@@ -5,8 +5,11 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework import permissions
 
-from accounts.serailzier import UserSerailizer
+from accounts.serailzier import UserSerailizer,ProfilSerializer
 from accounts.models import UserModel
+from accounts.models import UserProfileModel
+
+from leads.permission import IsOwner
 
 
 class UserRegisterView(APIView):
@@ -30,6 +33,29 @@ class UserRegisterView(APIView):
         else:return Response(data=serilaizer_instance.errors)
 
 
+class UpdateProfileView(APIView):
+
+   authentication_classes = [JWTAuthentication]
+
+   permission_classes = [permissions.IsAuthenticated,IsOwner]
+
+   def put(self,request):
+
+      form_data = request.data
+
+      profile_object = UserProfileModel.objects.get(owner=request.user)
+
+      serializer = ProfilSerializer(data=form_data,instance = profile_object)
+
+      if serializer.is_valid():
+
+         serializer.save()
+
+         return Response(data=serializer.data)
+
+      else:return Response(data=serializer.errors)
+
+
 class GetMeView(APIView):
 
     authentication_classes = [JWTAuthentication]
@@ -43,3 +69,6 @@ class GetMeView(APIView):
      serializer = UserSerailizer(user)
 
      return Response(data=serializer.data)
+
+
+    
