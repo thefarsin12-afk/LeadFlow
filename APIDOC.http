@@ -31,14 +31,14 @@ POST http://127.0.0.1:8000/account/token/refresh/
 Content-Type: application/json
 
 {
-    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5Mzc2MTczNCwiaWF0IjoxNzkzNjc1MzM0LCJqdGkiOiI2Mjk0N2IwZWY4NWY0ODhkYWM4YThlY2RlYzY3NWEzOCIsInVzZXJfaWQiOiIxIn0.Rx3qYeo3FHxzR4ghiaaHqu0i_hnDquGREhKnQ2xNlRM"
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5Mzc2Mjg1MCwiaWF0IjoxNzkzNjc2NDUwLCJqdGkiOiJiYTQ1ZGU4NjIwMjk0ZjdkOTQ4NTkzN2NmZjIzNDgxOSIsInVzZXJfaWQiOiIxIn0.EcwUT2HkHtiJKIVADk-TJbpWbarn7L5EMaXr58SJbI8"
 }
 
 # logged user 
 ###
 GET http://127.0.0.1:8000/account/profile/
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc0MjExLCJpYXQiOjE3OTM2NzM5MTEsImp0aSI6ImU3ZjRjMjc2ODQ2MjRhNGI5NTk2Y2Q5MzBjMDcyNDQzIiwidXNlcl9pZCI6IjEifQ.asQ3YB3zL-r8IWpKbgiq7PNBpDqkUeubUSTdoifGmcQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc2NzY5LCJpYXQiOjE3OTM2NzY0NjksImp0aSI6ImEwMGFjZGFlMjlkZDRmYzFhNWY2NmZlZmI3ODQ5NWRkIiwidXNlcl9pZCI6IjEifQ.Bjy6QdtyTqTMNMnj2dOkvqCc6j592WyDJXUwnjH8rlk
 
 
 # ==== LEADS ====

@@ -40,8 +40,6 @@ class GetMeView(APIView):
 
      user = request.user
 
-     instance = get_object_or_404(UserModel,username=user)
-
-     serializer = UserSerailizer(instance)
+     serializer = UserSerailizer(user)
 
      return Response(data=serializer.data)
