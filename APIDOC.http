@@ -38,7 +38,7 @@ Content-Type: application/json
 ###
 GET http://127.0.0.1:8000/account/profile/
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzIzMjE2LCJpYXQiOjE3OTM3MjI5MTYsImp0aSI6Ijg2NTc1ZGYzMGIzMTQ2NWNiMzdjZTNjMjU1OGZmZmQ5IiwidXNlcl9pZCI6IjMifQ.2wsOQcgHi93aKO3ACkiBAyGGfah-2IVNsCx2-gCXrS0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNzIzODE3LCJpYXQiOjE3OTM3MjM1MTcsImp0aSI6ImE4ZDA2NDcyNTkzNjQzNGZhNjNlYTA0ZjY0YTNlZTNlIiwidXNlcl9pZCI6IjMifQ.xdeMJrrWv431c00-bY46D6GGkXswIwnqmA867l3hoeo
 
 # profile api
 ###
