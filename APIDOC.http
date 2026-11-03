@@ -1,0 +1,110 @@
+
+# user registartion
+###
+POST http://127.0.0.1:8000/account/register/
+Content-Type: application/json
+
+{
+    "username":"user2",
+
+    "email":"user2@gmail.com",
+
+    "password":"password@123",
+
+    "phone":"8723123404"
+}
+
+# jwt token generating
+###
+POST http://127.0.0.1:8000/account/token/
+Content-Type: application/json
+
+{
+    "username":"user1",
+    
+    "password":"password@123"
+}
+
+#jwt refresh token gerating
+###
+POST http://127.0.0.1:8000/account/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5Mzc2MTczNCwiaWF0IjoxNzkzNjc1MzM0LCJqdGkiOiI2Mjk0N2IwZWY4NWY0ODhkYWM4YThlY2RlYzY3NWEzOCIsInVzZXJfaWQiOiIxIn0.Rx3qYeo3FHxzR4ghiaaHqu0i_hnDquGREhKnQ2xNlRM"
+}
+
+# logged user 
+###
+GET http://127.0.0.1:8000/account/profile/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc0MjExLCJpYXQiOjE3OTM2NzM5MTEsImp0aSI6ImU3ZjRjMjc2ODQ2MjRhNGI5NTk2Y2Q5MzBjMDcyNDQzIiwidXNlcl9pZCI6IjEifQ.asQ3YB3zL-r8IWpKbgiq7PNBpDqkUeubUSTdoifGmcQ
+
+
+# ==== LEADS ====
+
+# api for listing 
+###
+GET http://127.0.0.1:8000/api/leads/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc1MTA0LCJpYXQiOjE3OTM2NzQ4MDQsImp0aSI6ImFhMmJjNzhhZTM1ODRhY2ZiNWRlY2U0NzI3M2Q3ZTk0IiwidXNlcl9pZCI6IjEifQ.k3X-GEqn_dlfQObFbR8p6-qMBqiTq_gmsIn6C-DOIF0
+
+# api for creating
+###
+POST http://127.0.0.1:8000/api/leads/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc1MTA0LCJpYXQiOjE3OTM2NzQ4MDQsImp0aSI6ImFhMmJjNzhhZTM1ODRhY2ZiNWRlY2U0NzI3M2Q3ZTk0IiwidXNlcl9pZCI6IjEifQ.k3X-GEqn_dlfQObFbR8p6-qMBqiTq_gmsIn6C-DOIF0
+
+{
+    "name": "Sunil Shetty",
+    "email": "sunil@gmail.com",
+    "phone": "9876543218",
+    "company": "Info Tech",
+    "source": "Website",
+    "status": "Interested",
+    "description": "Interested in our services"
+
+}
+
+# api for retreve
+###
+GET http://127.0.0.1:8000/api/leads/2/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc1OTgzLCJpYXQiOjE3OTM2NzU2ODMsImp0aSI6ImRmZWVhZDg4MjhkYTRhNDM4ODRmNTRhZjhkZDgyYzRhIiwidXNlcl9pZCI6IjEifQ.HSO4a79Jb137_GgYRdjSWztWI1RkUixY_OqB5qgJlUk
+
+# api for updating put
+###
+PUT http://127.0.0.1:8000/api/leads/2/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc1NjUwLCJpYXQiOjE3OTM2NzUzNTAsImp0aSI6IjkzMjI2ODkzYjExNDQzNGY4NGMxYjJkNjgwNDYwZDBlIiwidXNlcl9pZCI6IjEifQ.d6R0sU4IBuHgY5zMR9DfEuf1ipW9KcOj9pMqw1PkZkU
+
+{
+  "id": 2,
+  "name": "Sunil Shetty",
+  "email": "sunil@gmail.com",
+  "phone": "9876543218",
+  "company": "Info Tech",
+  "source": "Website",
+  "status": "Contacted",
+  "description": "Interested in our services",
+  "created_at": "2026-11-03T03:02:07.723857Z",
+  "updated_at": "2026-11-03T03:02:07.723894Z",
+  "created_by": 1
+}
+
+# api for patch
+###
+PATCH http://127.0.0.1:8000/api/leads/2/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc1NjUwLCJpYXQiOjE3OTM2NzUzNTAsImp0aSI6IjkzMjI2ODkzYjExNDQzNGY4NGMxYjJkNjgwNDYwZDBlIiwidXNlcl9pZCI6IjEifQ.d6R0sU4IBuHgY5zMR9DfEuf1ipW9KcOj9pMqw1PkZkU
+
+{
+    "name": "Sunil Shetty.Vm",
+    "email": "sunilshetty@gmail.com"
+}
+
+# api for delete
+###
+DELETE http://127.0.0.1:8000/api/leads/1/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkzNjc1NjUwLCJpYXQiOjE3OTM2NzUzNTAsImp0aSI6IjkzMjI2ODkzYjExNDQzNGY4NGMxYjJkNjgwNDYwZDBlIiwidXNlcl9pZCI6IjEifQ.d6R0sU4IBuHgY5zMR9DfEuf1ipW9KcOj9pMqw1PkZkU
