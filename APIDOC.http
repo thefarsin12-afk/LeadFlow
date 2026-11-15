@@ -5,13 +5,13 @@ POST http://127.0.0.1:8000/account/register/
 Content-Type: application/json
 
 {
-    "username":"user3",
+    "username":"user15",
 
-    "email":"user3@gmail.com",
+    "email":"trock2919@gmail.com",
 
     "password":"password@123",
 
-    "phone":"8723123409"
+    "phone":"8723123427"
 }
 
 # jwt token generating
@@ -20,7 +20,7 @@ POST http://127.0.0.1:8000/account/token/
 Content-Type: application/json
 
 {
-    "username":"user3",
+    "username":"8723123410",
     
     "password":"password@123"
 }

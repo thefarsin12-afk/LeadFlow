@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 from django.db.models.signals import post_save
 
+from django.core.mail import send_mail
+
 class UserModel(AbstractUser):
 
     phone = models.CharField(max_length=100,unique=True)
@@ -28,3 +30,17 @@ def create_profile(sender,instance,created,*args,**kwargs):
         UserProfileModel.objects.create(owner=instance)
 
 post_save.connect(create_profile,sender=UserModel)
+
+
+def send_activation_mail(sender,instance,created,*args,**kwargs):
+
+    if created:
+
+        send_mail(
+            "Account activated",
+            "Congratulations, you're created and account",
+            "thefarsin12@gmail.com",
+            ["trock2919@gmail.com"],
+        )
+
+post_save.connect(send_activation_mail,sender=UserModel)        
